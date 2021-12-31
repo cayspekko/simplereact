@@ -6,3 +6,16 @@ before_install:
   - docker build -f Dockerfile.dev -t cayspekko/simplereact .
 script:
   - docker run -e CI=true cayspekko/simplereact npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-west-2"
+  app: "simplereact"
+  env: "Simplereact-env"
+  bucket_name: "elasticbeanstalk-us-west-2-243341770758"
+  bucket_path: "simplereact"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
