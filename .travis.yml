@@ -13,7 +13,7 @@ deploy:
   region: "us-west-2"
   app: "simplereact"
   env: "Simplereact-env"
-  bucket_name: "elasticbeanstalk-us-west-2-243341770758"
+  bucket_name: "elasticbeanstalk-us-west-2-075356433460"
   bucket_path: "simplereact"
   on:
     branch: master
